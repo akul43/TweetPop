@@ -17,10 +17,12 @@ def home():
 #Runs when Submit a text
 @app.route('/result',methods=['POST', 'GET'])
 def result():
-    return render_template('index.html') #Send result to html page which will display the tweet text and link
-    # !!! Possibly send another html page populated with tweets. 
+    #Take input and run tweets query
+    output = request.form.to_dict() #User Input
+    keyword = scraper.run_query(output['keyword']) #Run Tweet Search with given keyword
+    return render_template('index.html', len = len(keyword), keyword = keyword) #Send result to html page which will display the tweet text and link
 
 
 
 if __name__ == "__main__":
-    app.run(use_reloader = True, debug=True) #App running settings
+    app.run(use_reloader = True, debug=True) #App run settings
