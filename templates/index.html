@@ -12,19 +12,20 @@
 
     <form class="grid" action="/result" method="POST">
         <label for="keyword">Enter your keyword..</label>
-        <input type="text" id="keyword" name="keyword">
+        <input type="text" id="keyword" name="keyword" style="border: 1px solid #ccc; padding: 5px;">
         <input class="file_submit" type="Submit">
-        <center>
-            <!-- Check if we have a input in the text box once we press Submit, if yes run code -->
-            {% if keyword %}
-            <!-- Use a for loop to iterate over each element in the name list and print it -->
-            {% for element in keyword %}
-            <!-- Tweet Embed Template -->
-            <blockquote class="twitter-tweet">
-                <a href={{element}}></a>
-            </blockquote>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br> {% endfor %} {% endif %}
-        </center>
+    </form>
+    <center>
+        <!-- Check if we have a input in the text box once we press Submit, if yes run code -->
+        {% if keyword %}
+        <!-- Use a for loop to iterate over each element in the name list and print it -->
+        {% for element in keyword %}
+        <!-- Tweet Embed Template -->
+        <blockquote class="twitter-tweet">
+            <a href={{element}}></a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br> {% endfor %} {% endif %}
+    </center>
     </form>
     <br>
     <br>

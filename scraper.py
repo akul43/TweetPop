@@ -11,7 +11,7 @@ api = tweepy.API(auth)
 
 def run_query(myQuery):
     #Search recent tweets by relevancy for the given keyword 
-    tweets = client.search_recent_tweets(query= myQuery,max_results=10, sort_order='relevancy', tweet_fields=['id','text','lang'], user_fields=['verified'], expansions='author_id')
+    tweets = client.search_recent_tweets(query= myQuery,max_results=50, sort_order='relevancy', tweet_fields=['id','text','lang'], user_fields=['verified'], expansions='author_id')
 
     tweet_link=[]
     for tweet in tweets[0]: #Search in tweet field
